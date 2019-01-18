@@ -20,15 +20,20 @@
 .navbar{
   border-bottom: 1px solid rgba(0,0,0,.0975);
 }
+.logo { color: #999; }
 .user-section{
   a{
     padding-left: 15px;
   }
   i.fa{
     font-size: 22px;
-    color: #000000d4;
+    color: #999;
   }
 }
+h2 { color: #999; }
+.link { color: #999; }
+.link:hover { color: #999; }
+
 .search-form{
   input{
     font-size: 13px;

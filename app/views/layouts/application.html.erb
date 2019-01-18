@@ -17,7 +17,7 @@
       <div class="container">
         <div class="logo">
           <a class="navbar-brand" href="#">
-            <%= fa_stacked_icon "camera inverse", base: "circle"%>
+            <%= fa_stacked_icon "camera inverse", base: "circle" %>
             Imago
           </a>
         </div>
@@ -47,7 +47,11 @@
     <p class="alert"><%= alert %></p>
 
     <main class="container" style="min-height: 500px;">
-
+      <font face="courier new">
+      <center>
+      <%= yield %>
+      </center>
+      </font>
     </main>
 
     <!--Footer-->
@@ -65,7 +69,7 @@
         </ul>
         </font>
         <font face="courier new">
-        <p> © 2018 Imago - Powered by Kaiser </p>
+        <p> © 2019 Imago - Powered by Cesare on Rails </p>
         </font>
       </nav>
     </footer>
