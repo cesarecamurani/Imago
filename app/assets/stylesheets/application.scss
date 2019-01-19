@@ -34,6 +34,9 @@
 h2 { color: #999; }
 .link { color: #999; }
 .link:hover { color: #999; }
+h4 { color: #999; }
+.link { color: #999; }
+.link:hover { color: #999; }
 
 .search-form{
   input{
@@ -55,4 +58,7 @@ h2 { color: #999; }
   p{
     color: #999;
   }
+}
+input[type='submit']{
+  color: black;
 }

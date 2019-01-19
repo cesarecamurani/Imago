@@ -31,7 +31,7 @@
           <a><i class="fa fa-heart"></i></a>
           <% if user_signed_in? %>
           <a href="<%= user_path(current_user) %>">
-            <i class=”fa fa-user”></i>
+            <i class="fa fa-user"></i>
           </a>
           <% else %>
             <a href="<%= new_user_session_path %>">
@@ -42,9 +42,12 @@
       </div>
       </font>
     </nav>
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <font face="courier new">
+    <center>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </center>
+    </font>
 
     <main class="container" style="min-height: 500px;">
       <font face="courier new">
