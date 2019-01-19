@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title> Imago </title>
+    <title> Imago Edit Profile</title>
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -21,7 +21,7 @@
             <img class="avatar" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(9).jpg">
           </div>
           <div class="col-sm-9">
-            <p class="username"><h2> Cesare </h2></p>
+            <h2> <%= current_user.username %> </h2>
             <a class="change-photo" href=""> Change Profile Photo </a>
           </div>
         </div>

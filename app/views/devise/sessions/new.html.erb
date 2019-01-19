@@ -1,19 +1,29 @@
-<h2>Login</h2>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> Imago Login </title>
+  </head>
+  <body>
+    <h2>Login</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-  <br />
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-  <br />
-  <div class="actions">
-    <%= f.submit "Login", class: 'btn btn-light' %>
-  </div>
-<% end %>
-<br />
-<%= render "devise/shared/links" %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+      <br />
+      <div class="field">
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "current-password" %>
+      </div>
+      <br />
+      <div class="actions">
+        <%= f.submit "Login", class: 'btn btn-light' %>
+      </div>
+    <% end %>
+    <br />
+    <%= render "devise/shared/links" %>
+
+  </body>
+</html>
