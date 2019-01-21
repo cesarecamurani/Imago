@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
 
+  def new
+
+  end
+
   def show
 
   end
@@ -13,6 +17,13 @@ class UsersController < ApplicationController
     current_user.update(user_params)
     redirect_to current_user
   end
+
+  def destroy
+    User.find(session[:user_id]).destroy
+    session[:user_id] = nil
+    redirect_back(fallback_location: root_path)
+  end
+
 
   private
 
