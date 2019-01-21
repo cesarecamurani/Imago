@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
-
+    @posts = current_user.posts.order(created_at: :desc)
   end
 
   def edit

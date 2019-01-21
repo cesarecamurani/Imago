@@ -18,7 +18,7 @@
           </div>
 
           <div class="form-group">
-            <%= f.file_field :images %>
+            <%= f.file_field :image %>
           </div>
 
           <div class="form-group">
@@ -32,7 +32,9 @@
         </div>
       </div>
     </div>
-
+    <hr>
+    <br>
+    <h2> Posts: </h2>
     <div class="posts">
       <% @posts.each do |post| %>
       <section class="post">

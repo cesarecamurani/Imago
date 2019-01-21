@@ -23,7 +23,7 @@
             <hr>
             <center>
               <p>
-              <span><b> 12 </b></span> posts <br>
+              <span><b> <%= @posts.count %> </b></span> posts <br>
               <span><b> 195 </b></span> followers <br>
               <span><b> 345 </b></span> following
               </p>
@@ -39,15 +39,11 @@
       </div>
       <hr>
       <div class="user-images">
+        <% @posts.each do |post|%>
         <div class="wrapper">
-          <img src="https://goosed.ie/wp-content/uploads/2018/11/Game-of-Thrones.png">
+          <%=image_tag post.image %>
         </div>
-        <div class="wrapper">
-          <img src="https://www.telegraph.co.uk/content/dam/tv/2016/06/29/tyrion-peter-dinklage-large_trans_NvBQzQNjv4Bq2oUEflmHZZHjcYuvN_Gr-bVmXC2g6irFbtWDjolSHWg.jpg?imwidth=450">
-        </div>
-        <div class="wrapper">
-          <img src="https://s.abcnews.com/images/Entertainment/game-thrones-white-walkers-london-preview-gty-jef-170712_16x9_992.jpg">
-        </div>
+        <% end %>
       </div>
   </body>
 </html>
