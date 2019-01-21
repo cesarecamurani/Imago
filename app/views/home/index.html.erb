@@ -43,16 +43,19 @@
             <img src="user_avatar.jpg">
           </div>
           <div class="username">
-            <%= post.user.username %>
+            <h4><%= post.user.username %></h4>
           </div>
+
         </div>
         <%= image_tag post.image, class: 'main-image' %>
         <div class="description">
           <%= post.description %>
+          <hr>
+          Posted at: <%= post.created_at.strftime("%H:%M on %d-%m-%Y") %>
         </div>
         </section>
         <% end %>
-        <h4><%= paginate @posts %><h4>
+        <h6><%= paginate @posts %></h6>
       </div>
   </body>
 </html>
