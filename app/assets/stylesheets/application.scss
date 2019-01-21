@@ -34,9 +34,12 @@
 h2 { color: #999; }
 .link { color: #999; }
 .link:hover { color: #999; }
+.link:visited { color: #999; }
+
 h4 { color: #999; }
 .link { color: #999; }
 .link:hover { color: #999; }
+.link:visited { color: #999; }
 
 .search-form{
   input{
@@ -106,3 +109,8 @@ input[type='submit']{
     }
   }
 }
+.pagination{
+    span{
+      padding-right: 10px;
+    }
+  }
