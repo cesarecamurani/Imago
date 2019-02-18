@@ -31,7 +31,7 @@
             <h4 class="name"> <%= current_user.name %> </h4>
             <a class="website"> <%= current_user.email %> </a>
             <hr>
-            <a class="edit-profile" href="<%= edit_user_path(current_user) %>">
+            <a class="edit-profile" href="<%= edit_user_path(@user) %>">
               <button type="button" class="btn btn-light"> Edit Profile </button>
             </a>
           </div>

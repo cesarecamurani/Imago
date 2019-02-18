@@ -1,17 +1,18 @@
 
 default: &default
+ host: localhost
  adapter: postgresql
  encoding: unicode
  pool: 5
 
 development:
  <<: *default
- database: development_Imago
+ database: development_imago
 
 test:
  <<: *default
- database: test_Imago
+ database: test_imago
 
 production:
  <<: *default
- database: production_Imago
+ database: production_imago
