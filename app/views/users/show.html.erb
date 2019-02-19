@@ -11,7 +11,8 @@
     <title> Imago My Page </title>
   </head>
   <body>
-
+    <h2> <%= current_user.username %> </h2>
+    <br>
     <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
         <div class="card testimonial-card">
           <div class="card-up info-color"></div>
@@ -21,7 +22,8 @@
 
           </div>
           <div class="card-body">
-            <h2> <%= current_user.username %> </h2>
+            <h6> Intro: </h6>
+            <h4 class="bio"> <%= current_user.bio %> </h4>
             <hr>
             <center>
               <p>
@@ -29,6 +31,7 @@
               <span><b> 195 </b></span> followers <br>
               <span><b> 345 </b></span> following
               </p>
+            <hr>
             </center>
             <h4 class="name"> <%= current_user.name %> </h4>
             <a class="website"> <%= current_user.email %> </a>
@@ -67,9 +70,9 @@
             <hr>
             <% pre_like = Like.find_by(user_id: current_user.id, post_id: post) %>
             <% if pre_like %>
-              <%= link_to 'Unlike', post_like_path(post, pre_like), method: :delete %> -
+              <%= link_to 'Unlike', post_like_path(post, pre_like), method: :delete %> (<b><%= post.likes.count %></b>)
             <% else %>
-              <%= link_to 'Like', post_likes_path(post), method: :post %>(<%= post.likes.count %>)
+              <%= link_to 'Like', post_likes_path(post), method: :post %> (<b><%= post.likes.count %></b>)
             <% end %>
           </div>
           </section>
