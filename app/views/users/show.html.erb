@@ -65,7 +65,12 @@
             <hr>
             Posted at: <%= post.created_at.strftime("%H:%M on %d-%m-%Y") %>
             <hr>
-            <%= link_to image_tag('like.png', :size => "20x20"), post_likes_path(post), method: :post %>(<%= post.likes.count %>)
+            <% pre_like = Like.find_by(user_id: current_user.id, post_id: post) %>
+            <% if pre_like %>
+              <%= link_to 'Unlike', post_like_path(post, pre_like), method: :delete %> -
+            <% else %>
+              <%= link_to image_tag('like.png', :size => "20x20"), post_likes_path(post), method: :post %>(<%= post.likes.count %>)
+            <% end %>
           </div>
           </section>
           <% end %>
