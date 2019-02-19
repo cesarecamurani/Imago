@@ -14,7 +14,7 @@
       <% if @posts.exists? %>
         <h4> Results of your search: </h4>
       <% else %>
-        <h4> Oop! No matching posts ... </h4>
+        <h4> Oops! No matching Imago ... </h4>
       <% end %>
       <div class="posts">
         <% @posts.each do |post| %>
@@ -31,7 +31,13 @@
           </div>
           <%= image_tag post.image, class: 'main-image' %>
           <div class="description">
-            <%= post.description %>
+            <% post.description.to_s.split(' ').each do |word| %>
+              <% if word.start_with?('#') %>
+                <%= link_to word, search_path(query: word) %>
+              <%else %>
+                <%= word %>
+              <%end %>
+            <% end %>
             <hr>
             Posted at: <%= post.created_at.strftime("%H:%M on %d-%m-%Y") %>
           </div>

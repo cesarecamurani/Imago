@@ -10,7 +10,7 @@
       <div class="card testimonial-card">
         <div class="card-up info-color"></div>
         <div class="card-body">
-          <h4> Create New Post: </h4>
+          <h4> Create New Imago: </h4>
           <hr>
 
           <%= form_for Post.new do |f| %>
@@ -52,7 +52,13 @@
         </div>
         <%= image_tag post.image, class: 'main-image' %>
         <div class="description">
-          <%= post.description %>
+          <% post.description.to_s.split(' ').each do |word| %>
+            <% if word.start_with?('#') %>
+              <%= link_to word, search_path(query: word) %>
+            <%else %>
+              <%= word %>
+            <%end %>
+          <% end %>
           <hr>
           Posted at: <%= post.created_at.strftime("%H:%M on %d-%m-%Y") %>
         </div>
