@@ -40,13 +40,28 @@
         </div>
       </div>
       <hr>
-      <div class="user-images">
-        <% @posts.each do |post|%>
-        <div class="wrapper">
-          <%=image_tag post.image %>
+      <div class="posts">
+        <% @posts.each do |post| %>
+        <section class="post">
+          <div class="user">
+            <div class="avatar">
+              <img src="https://image.ibb.co/hPKoao/penny.jpg">
+                <%# <%= current_user.avatar.url %>
+            </div>
+            <div class="username">
+              <h4><%= post.user.username %></h4>
+            </div>
+
+          </div>
+          <%= image_tag post.image, class: 'main-image' %>
+          <div class="description">
+            <%= post.description %>
+            <hr>
+            Posted at: <%= post.created_at.strftime("%H:%M on %d-%m-%Y") %>
+          </div>
+          </section>
+          <% end %>
         </div>
-        <% end %>
-      </div>
     <hr>
   </body>
 </html>
