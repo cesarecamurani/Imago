@@ -27,7 +27,7 @@
           </div>
           <br>
           <div class="text-center">
-            <%= f.submit 'Create Post', class: 'btn btn-light' %>
+            <%= f.submit 'Create Imago', class: 'btn btn-light' %>
           </div>
           <% end %>
         </div>
@@ -61,8 +61,12 @@
           <% end %>
           <hr>
           Posted at: <%= post.created_at.strftime("%H:%M on %d-%m-%Y") %>
+          <hr>
+              <%= link_to 'Like', post_likes_path(post), method: :post %>(<%= post.likes.count %>)
+
         </div>
         </section>
+
         <% end %>
         <h6><%= paginate @posts %></h6>
       </div>

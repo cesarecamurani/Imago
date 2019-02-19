@@ -1,8 +1,12 @@
 class Post < ApplicationRecord
   after_commit :create_hash_tags, on: :create
+
   belongs_to :user
+
   has_one_attached :image
   validate :image_presence
+
+  has_many :likes, dependent: :destroy
 
   has_many :post_hash_tags
   has_many :hash_tags, through: :post_hash_tags

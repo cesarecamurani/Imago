@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'search/index'
   devise_for :users
   devise_scope :user do
@@ -10,6 +11,11 @@ Rails.application.routes.draw do
 
   get 'search' => 'search#index'
 
+  resources :posts, only: [:new, :create] do
+    resources :likes
+  end
+
   resources :users, only: [:show, :edit, :update]
-  resources :posts, only: [:new, :create]
+  # resources :posts, only: [:new, :create]
+
 end
