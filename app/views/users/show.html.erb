@@ -65,7 +65,7 @@
             <hr>
             Posted at: <%= post.created_at.strftime("%H:%M on %d-%m-%Y") %>
             <hr>
-            <%= link_to 'Like', post_likes_path(post), method: :post %>(<%= post.likes.count %>)
+            <%= link_to image_tag('like.png', :size => "20x20"), post_likes_path(post), method: :post %>(<%= post.likes.count %>)
           </div>
           </section>
           <% end %>
