@@ -5,6 +5,12 @@ class UsersController < ApplicationController
 
   end
 
+  def create
+    User.create(user_params)
+
+    redirect_to root_path
+  end
+
   def show
     @user  = User.find(params[:id])
     @posts = @user.posts.order(created_at: :desc)
@@ -28,7 +34,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :name, :website, :bio, :email, :phone, :gender, :avatar)
+    params.require(:user).permit(:username, :name, :website, :bio, :email, :avatar)
   end
 
 end

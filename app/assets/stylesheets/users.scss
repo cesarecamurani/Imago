@@ -68,13 +68,13 @@
   justify-content: space-between;
   margin: 0 20px;
 .wrapper{
-    // width: 280px;
-    // height: 280px;
-    // margin: 15px;
+    width: 280px;
+    height: 280px;
+    margin: 15px;
     img{
       height: 100%;
       width: 100%;
-      // border-radius: 4%;
+      border-radius: 4%;
     }
   }
 }
@@ -127,7 +127,7 @@
 .avatar{
     height: 70px;
     width: 70px;
-    border-radius: 50%;
+    border-radius: 80%;
   }
   .username{
     font-size: 20px;

@@ -8,7 +8,9 @@ class Sessions::RegistrationsController < Devise::RegistrationsController
   # def new
   #   super
   # end
-
+  # def sign_up_params
+  #    params.require(:user).permit(:email, :username, :params)
+  # end
   # POST /resource
   # def create
   #   super
