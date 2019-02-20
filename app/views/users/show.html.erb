@@ -71,9 +71,9 @@
             <hr>
             <% pre_like = Like.find_by(user_id: current_user.id, post_id: post) %>
             <% if pre_like %>
-              <%= link_to 'Unlike', post_like_path(post, pre_like), method: :delete %> (<b><%= post.likes.count %></b>)
+              <%= link_to image_tag('thumb_down.png', :size => "20x20"), post_like_path(post, pre_like), method: :delete %> (<%= post.likes.count %>)
             <% else %>
-              <%= link_to 'Like', post_likes_path(post), method: :post %> (<b><%= post.likes.count %></b>)
+              <%= link_to image_tag('like_thumb.png', :size => "20x20"), post_likes_path(post), method: :post %> (<%= post.likes.count %>)
             <% end %>
             <%= link_to 'Delete', post_path(post), method: :delete %>
           </div>
