@@ -28,8 +28,8 @@
             <center>
               <p>
               <span><b> <%= @posts.count %> </b></span> posts <br>
-              <span><b> 195 </b></span> followers <br>
-              <span><b> 345 </b></span> following
+              <span><b> 0 </b></span> followers <br>
+              <span><b> 0 </b></span> following
               </p>
             <hr>
             </center>
@@ -67,6 +67,7 @@
             <% end %>
             <hr>
             Posted at: <%= post.created_at.strftime("%H:%M on %d-%m-%Y") %>
+
             <hr>
             <% pre_like = Like.find_by(user_id: current_user.id, post_id: post) %>
             <% if pre_like %>
@@ -74,6 +75,7 @@
             <% else %>
               <%= link_to 'Like', post_likes_path(post), method: :post %> (<b><%= post.likes.count %></b>)
             <% end %>
+            <%= link_to 'Delete', post_path(post), method: :delete %>
           </div>
           </section>
           <% end %>

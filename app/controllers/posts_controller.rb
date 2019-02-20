@@ -3,10 +3,15 @@ class PostsController < ApplicationController
   def new
 
   end
-  
+
   def create
     Post.create(post_params)
+    redirect_to root_path
+  end
 
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
     redirect_to root_path
   end
 

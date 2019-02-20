@@ -68,6 +68,9 @@
           <% else %>
             <%= link_to 'Like', post_likes_path(post), method: :post %>(<%= post.likes.count %>)
           <% end %>
+          <% if current_user.id == post.user_id %>
+          <%= link_to 'Delete', post_path(post), method: :delete %>
+         <% end %>
         </div>
         </section>
 
