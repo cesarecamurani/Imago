@@ -40,8 +40,8 @@
       <section class="post">
         <div class="user">
           <div class="avatar">
-            <img src="https://image.ibb.co/hPKoao/penny.jpg">
-              <%# <%= current_user.avatar.url %>
+            <%= link_to image_tag('placeholder.png') %>
+               <%# <%= image_tag current_user.avatar.url, :size => "40x30" %>
           </div>
           <div class="username">
             <h4><%= post.user.username %></h4>
@@ -83,6 +83,7 @@
               <li class="list-group-item">"<%= comment.comment %>"
                 <div class="d-flex w-100 justify-content-between">
                   <small class="text-muted"> Comment by: <%= comment.username %></small>
+                  
                 </div>
               </li>
             </ul>
