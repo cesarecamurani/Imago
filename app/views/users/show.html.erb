@@ -78,27 +78,23 @@
             <%= link_to image_tag('delete.png', :size => "20x20", alt: "delete imago"), post_path(post), method: :delete %>
           </div>
 
-          <%= form_with(model: [ @post, @post.comments.build ], local: true) do |form| %>
-          <p>
-            <%= form.label :comment %><br>
-            <%= form.text_area :comment %>
-          </p>
-          <p>
-            <%= form.submit %>
-          </p>
-          <% end %>
-
           <h4>Comments:</h4>
+          <hr>
           <% post.comments.each do |comment| %>
-          <div>
-            <br>
-            <p><%= comment.comment %></p>
-          </div>
-          <% end %>
+              <div class="user">
+                <div class="avatar">
+                  <img src="https://image.ibb.co/hPKoao/penny.jpg">
+                    <%# <%= current_user.avatar.url %>
+                </div>
+                <div class="username">
+                  <h6><%= comment.username %></h6>  <%= comment.comment %>
+                </div>
+                <hr>
+              </div>
+            <% end %>
           </section>
           <% end %>
         </div>
-
-    <hr>
+      <hr>
   </body>
 </html>

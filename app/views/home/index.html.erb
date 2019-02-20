@@ -75,23 +75,29 @@
         <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
         <p>
           <%= form.label :comment %><br>
-          <%= form.text_area :comment %>
+          <%= form.text_field :comment %>
         </p>
         <p>
           <%= form.submit %>
         </p>
         <% end %>
         <h4>Comments:</h4>
+        <hr>
         <% post.comments.each do |comment| %>
-        <div>
-          <br>
-          <p><%= comment.comment %></p>
-        </div>
-        <% end %>
+            <div class="user">
+              <div class="avatar">
+                <img src="https://image.ibb.co/hPKoao/penny.jpg">
+              </div>
+              <div class="username">
+                <h6><%= comment.username %></h6>
+                <div class="description">
+                  <%= comment.comment %>
+                </div>
+              </div>
+            </div>
+          <% end %>
         </section>
-
         <% end %>
-        <h6><%= paginate @posts %></h6>
       </div>
   </body>
 </html>

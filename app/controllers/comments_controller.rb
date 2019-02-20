@@ -10,7 +10,10 @@ class CommentsController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.create(params[:comment].permit(:name, :comment))
+    @comment = @post.comments.create(params[:comment].permit(:name, :comment, :username, :user_id))
+    @comment.user_id = current_user.id
+    @comment.username = current_user.username
+    @comment.save!
     redirect_to root_path
   end
 

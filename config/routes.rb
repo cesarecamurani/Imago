@@ -12,9 +12,10 @@ Rails.application.routes.draw do
   get 'search' => 'search#index'
 
   resources :posts, only: [:new, :create, :destroy] do
-    resources :likes, :comments, :only => [:create, :index, :new]
+    resources :likes, :comments, :only => [:create, :index, :new, :destroy]
   end
   resources :comments, :only => [:destroy, :show, :edit, :update]
+  resources :likes, :only => [:destroy, :show, :create]
   resources :users, only: [:show, :edit, :update]
   # resources :posts, only: [:new, :create]
 
