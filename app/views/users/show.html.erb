@@ -77,21 +77,18 @@
             <% end %>
             <%= link_to image_tag('delete.png', :size => "20x20", alt: "delete imago"), post_path(post), method: :delete %>
           </div>
-
-          <h4>Comments:</h4>
           <hr>
           <% post.comments.each do |comment| %>
-              <div class="user">
-                <div class="avatar">
-                  <img src="https://image.ibb.co/hPKoao/penny.jpg">
-                    <%# <%= current_user.avatar.url %>
-                </div>
-                <div class="username">
-                  <h6><%= comment.username %></h6>  <%= comment.comment %>
-                </div>
-                <hr>
-              </div>
-            <% end %>
+
+              <ul class="list-group">
+                <li class="list-group-item">"<%= comment.comment %>"
+                  <div class="d-flex w-100 justify-content-between">
+                    <small class="text-muted"> Comment by: <%= comment.username %></small>
+                  </div>
+                </li>
+              </ul>
+      
+          <% end %>
           </section>
           <% end %>
         </div>

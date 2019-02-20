@@ -24,7 +24,7 @@
         </div>
         <div class="m-auto">
           <%= form_with url: search_path, method: :get, local: true, class: 'form-inline search-form' do |form| %>
-            <%= form.text_field :query, value: params[:query], class: 'form-control mr-sm-2', placeholder: '#search' %>
+            <%= form.text_field :query, value: params[:query], class: 'form-control mr-sm-2', placeholder: 'search by #' %>
           <% end %>
         </div>
         <div class="user-section">
@@ -69,8 +69,8 @@
       <nav class="navbar d-flex">
         <font face="courier new">
         <ul>
-          <a href="https://github.com/cesarecamurani">
-            ABOUT CESARE
+          <a style="text-decoration:none;" target="blank" href="https://github.com/cesarecamurani">
+            <h6>ABOUT CESARE</h6>
           </a>
         </ul>
         </font>

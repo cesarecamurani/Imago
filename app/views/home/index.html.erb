@@ -15,11 +15,11 @@
           <h6> add a description: </h6>
           <%= form_for Post.new do |f| %>
           <div class="form-group">
-            <%= f.text_area :description %>
+            <%= f.text_field :description %>
           </div>
 
           <div class="form-group">
-            <%= f.file_field :image %>
+            <%= f.file_field :image, class: 'btn btn-light' %>
           </div>
 
           <div class="form-group">
@@ -35,8 +35,6 @@
     </div>
     <hr>
     <br>
-    <h2> Posts: </h2>
-
     <div class="posts">
       <% @posts.each do |post| %>
       <section class="post">
@@ -72,30 +70,34 @@
           <%= link_to image_tag('delete.png', :size => "20x20"), post_path(post), method: :delete %>
          <% end %>
         </div>
+
+        <hr>
+        <a class="btn btn-light" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+          See Comments
+        </a>
+        <br><br>
+        <% post.comments.each do |comment| %>
+        <div class="collapse" id="collapseExample">
+          <div class="card card-body">
+            <ul class="list-group">
+              <li class="list-group-item">"<%= comment.comment %>"
+                <div class="d-flex w-100 justify-content-between">
+                  <small class="text-muted"> Comment by: <%= comment.username %></small>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <% end %>
         <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
         <p>
-          <%= form.label :comment %><br>
+          <%= form.label :Leave_a_comment %><br>
           <%= form.text_field :comment %>
         </p>
         <p>
-          <%= form.submit %>
+          <%= form.submit 'Comment', class: 'btn btn-light' %>
         </p>
         <% end %>
-        <h4>Comments:</h4>
-        <hr>
-        <% post.comments.each do |comment| %>
-            <div class="user">
-              <div class="avatar">
-                <img src="https://image.ibb.co/hPKoao/penny.jpg">
-              </div>
-              <div class="username">
-                <h6><%= comment.username %></h6>
-                <div class="description">
-                  <%= comment.comment %>
-                </div>
-              </div>
-            </div>
-          <% end %>
         </section>
         <% end %>
       </div>
