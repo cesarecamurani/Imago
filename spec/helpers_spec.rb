@@ -1,0 +1,51 @@
+require "helpers_spec.rb"
+require "rails_helper"
+
+def generate_mock_users
+  visit "/users/sign_up"
+  fill_in "Username", with: "Paul"
+  fill_in "Name", with: "Paul Kane"
+  fill_in "Email", with: "paul@gmail.com"
+  fill_in "Password", with: "password"
+  fill_in "Password confirmation", with: "password"
+  click_button "Sign up"
+  click_button "fa fa-sign-out"
+  visit "/users/sign_up"
+  fill_in "Username", with: "Jack"
+  fill_in "Name", with: "Jack Crawford"
+  fill_in "Email", with: "jackie@gmail.com"
+  fill_in "Password", with: "password"
+  fill_in "Password confirmation", with: "password"
+  click_button "Sign up"
+  click_button "fa fa-sign-out"
+  visit "/users/sign_up"
+  fill_in "Username", with: "Emma"
+  fill_in "Name", with: "Emma Thompson"
+  fill_in "Email", with: "emma@gmail.com"
+  fill_in "Password", with: "password"
+  fill_in "Password confirmation", with: "password"
+  click_button "Sign up"
+  click_link "fa fa-sign-out"
+end
+
+def sign_up_as_test
+  visit "/users/sign_up"
+  fill_in "Username", with: "Test"
+  fill_in "Name", with: "Test"
+  fill_in "Email", with: "test@gmail.com"
+  fill_in "Password", with: "password"
+  fill_in "Password confirmation", with: "password"
+  click_button "Sign up"
+  click_button "fa fa-sign-out"
+end
+
+def sign_up_as_ces
+  visit "/users/sign_up"
+  fill_in "Username", with: "Ces"
+  fill_in "Name", with: "Ces Ira"
+  fill_in "Email", with: "ces@gmail.com"
+  fill_in "Password", with: "password"
+  fill_in "Password confirmation", with: "password"
+  click_button "Sign up"
+  click_link "fa fa-sign-out"
+end
