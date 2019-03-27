@@ -42,10 +42,9 @@ end
 def sign_up_as_ces
   visit "/users/sign_up"
   fill_in "Username", with: "Ces"
-  fill_in "Name", with: "Ces Ira"
+  fill_in "Name", with: "Cesare"
   fill_in "Email", with: "ces@gmail.com"
   fill_in "Password", with: "password"
   fill_in "Password confirmation", with: "password"
   click_button "Sign up"
-  click_link "fa fa-sign-out"
 end
